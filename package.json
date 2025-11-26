@@ -1,0 +1,14 @@
+{
+  "name": "secret-project",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -w -r --parallel dev",
+    "build": "pnpm -w -r build",
+    "start": "pnpm -w -r start"
+  }
+}
