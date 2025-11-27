@@ -21,12 +21,15 @@ model Venue {
   name      String
   address   String?
   hazards   VenueHazard[]
+  submissions RAWSubmission[]
+  incidents Incident[]
   createdAt DateTime @default(now())
 }
 
 model RAWTemplate {
   id        String   @id @default(uuid())
   title     String
+  submissions RAWSubmission[]
   createdAt DateTime @default(now())
 }
 
@@ -54,6 +57,7 @@ model VenueHazard {
   venueId   String
   description String
   active    Boolean @default(true)
+  issues    HazardIssue[]
 }
 
 model HazardIssue {

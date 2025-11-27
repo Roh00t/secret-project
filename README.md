@@ -18,4 +18,29 @@ pnpm install
 pnpm dev
 ```
 
+Makefile shortcuts
+
+You can use the included `Makefile` to simplify common tasks:
+
+```bash
+# install all workspace deps
+make install
+
+# generate Prisma client
+make generate
+
+# start both web + api in dev (runs pnpm workspace dev)
+make dev
+
+# start single service
+make dev-api
+make dev-web
+
+# stop dev servers (best-effort)
+make stop
+
+# health check for API
+make health
+```
+
 If you prefer `npm` or `yarn`, update the workflow accordingly.
