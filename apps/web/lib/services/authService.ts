@@ -1,4 +1,4 @@
-import { supabase } from './supabase'
+import { supabase } from '../supabase'
 import type { User as SupabaseUser } from '@supabase/supabase-js'
 
 export interface AuthUser {
