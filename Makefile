@@ -1,16 +1,12 @@
-.PHONY: install generate migrate dev dev-api dev-web stop health
+.PHONY: install dev dev-api dev-web stop health
 
 install:
 	@echo "Installing workspace dependencies..."
 	pnpm install
 
-generate:
-	@echo "Generating Prisma client for apps/api..."
-	cd apps/api && npx prisma generate
-
-migrate:
-	@echo "Run Prisma migrations (interactive)..."
-	cd apps/api && npx prisma migrate dev --name init
+seed:
+	@echo "Run DB seed script for apps/api (loads repo .env if present)..."
+	node apps/api/scripts/seed.js
 
 dev: 
 	@echo "Starting all dev servers (web + api) via pnpm workspaces..."
